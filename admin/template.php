@@ -115,6 +115,7 @@ data-hide="'.incode($item['HIDE']).'"
     #nestable-menu{
         position: relative;
         left: 100px;
+        width: 300px;
     }
     #nestable-output-first,
     #nestable-output-change {
