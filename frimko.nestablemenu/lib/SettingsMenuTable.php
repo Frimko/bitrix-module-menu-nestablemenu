@@ -35,7 +35,6 @@ class SettingsMenuTable extends DataManager
                 'autocomplete' => true
             )),
             new StringField('NAME'),
-            new StringField('SITE'),
             new TextField('DATA'),
         );
     }

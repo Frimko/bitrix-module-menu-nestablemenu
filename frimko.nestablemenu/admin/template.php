@@ -8,7 +8,7 @@ use Bitrix\Frimko\Nestablemenu\SettingsMenuTable;
 
 
 $result = SettingsMenuTable::getList(array(
-    'select'  => array('NAME','DATA')
+    'select'  => array('NAME','DATA'),
 ));
 $row = $result->fetch();
 $menu = new CNestablemenu;
@@ -156,7 +156,7 @@ data-hide="'.incode($item['HIDE']).'"
                 $(this).parents('li.dd-item:first').after(longString);
             }
             /*delete buton*/
-            if (($(this).children().hasClass('glyphicon-trash')) && (confirm("<?GetMessage("FRIMKO_NESTABLEMENU_UDALITQ");?>"))) {
+            if (($(this).children().hasClass('glyphicon-trash')) && (confirm("<?=GetMessage("FRIMKO_NESTABLEMENU_UDALITQ");?>"))) {
                 $(this).parents('li.dd-item:first').remove();
             }
             /*show buton*/
@@ -164,7 +164,7 @@ data-hide="'.incode($item['HIDE']).'"
                 if(!$(this).hasClass('disabled')) {
                     $(this).addClass('disabled');
                     $(this).parents('li.dd-item:first').find('.glyphicon-eye-close').parent().removeClass('disabled');
-                    $(this).parents('li.dd-item:first').attr("data-hide", "").data("hide", "");;
+                    $(this).parents('li.dd-item:first').attr("data-hide", "").data("hide", "");
                 }
             }
             /*hide buton*/
@@ -172,7 +172,7 @@ data-hide="'.incode($item['HIDE']).'"
                 if(!$(this).hasClass('disabled')) {
                     $(this).addClass('disabled');
                     $(this).parents('li.dd-item:first').find('.glyphicon-eye-open').parent().removeClass('disabled');
-                    $(this).parents('li.dd-item:first').attr("data-hide", "disabled").data("hide", "disabled");;
+                    $(this).parents('li.dd-item:first').attr("data-hide", "disabled").data("hide", "disabled");
                 }
             }
             /*button edit*/

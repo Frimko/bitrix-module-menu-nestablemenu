@@ -20,7 +20,6 @@ if ($REQUEST_METHOD=="GET" && $USER->IsAdmin() && strlen($RestoreDefaults)>0 && 
     ));
 
 }
-
 if($REQUEST_METHOD=="POST" && $USER->IsAdmin() && strlen($Update)>0  && check_bitrix_sessid())
 {
     $result = SettingsMenuTable::update('1', array(
@@ -30,18 +29,23 @@ if($REQUEST_METHOD=="POST" && $USER->IsAdmin() && strlen($Update)>0  && check_bi
 
 
 $aTabs = array(
-    array('DIV' => 'edit1', 'TAB' => GetMessage('MAIN_TAB_SET'), 'TITLE' => GetMessage('MAIN_TAB_TITLE_SET')),
+    array(
+        'DIV' => 'edit1',
+        'TAB' => GetMessage('MAIN_TAB_SET'),
+        'TITLE' => GetMessage('MAIN_TAB_TITLE_SET')),
 );
 $tabControl = new CAdminTabControl("tabControl", $aTabs);?>
+
 <form method='POST' action='<?echo $APPLICATION->GetCurPage()?>?mid=<?=htmlspecialchars($mid)?>&lang=<?=LANGUAGE_ID?>'>
-<?bitrix_sessid_post();
+<?
+echo bitrix_sessid_post();
 $tabControl->Begin();
 
 $tabControl->BeginNextTab();
 
 
 $result = SettingsMenuTable::getList(array(
-    'select'  => array('NAME','DATA')
+    'select'  => array('NAME','DATA'),
 ));
 $row = $result->fetch();
 
@@ -52,7 +56,7 @@ $tableInBase='';
     <td valign='top' width='40%' class='field-name'>
         <label for='nestable_output_change'><?=GetMessage("FRIMKO_NESTABLEMENU_CODE_MENU");?></label>
     </td>
-    <td valign='middle' width='50%'>
+    <td valign='middle' width='60%'>
         <textarea id="nestable-output-change" style="width: 60%;font-size: 15px;"  name="form_textarea_nestable_output_change"><?=$row['DATA']?></textarea>
     </td>
 </tr>

@@ -58,7 +58,7 @@ class frimko_nestablemenu extends CModule
 
     function InstallFiles()
     {
-        CopyDirFiles($this->PATCH."/components", $_SERVER["DOCUMENT_ROOT"]."/bitrix/components", true, true);
+        CopyDirFiles($this->PATCH."/install/components", $_SERVER["DOCUMENT_ROOT"]."/bitrix/components", true, true);
         CopyDirFiles($this->PATCH."/install/css", $_SERVER["DOCUMENT_ROOT"]."/bitrix/css/frimko.nestablemenu", true, true);
         CopyDirFiles($this->PATCH."/install/js", $_SERVER["DOCUMENT_ROOT"]."/bitrix/js/frimko.nestablemenu", true, true);
         CopyDirFiles($this->PATCH."/install/admin", $_SERVER["DOCUMENT_ROOT"]."/bitrix/admin/", true);
@@ -80,11 +80,9 @@ class frimko_nestablemenu extends CModule
         {
             SettingsMenuTable::getEntity()->createDbTable();
             $name = 'new_menu';
-            $site = SITE_ID;
             $data = '[{"id":1,"text":"'.getMessage("FRIMKO_NESTABLEMENU_NEW_ELEMENT").'","link":"link","additional_links":"","params":"","permission":"R","hide":"","children":[{"id":2,"text":"'.getMessage("FRIMKO_NESTABLEMENU_NEW_ELEMENT").'","link":"link","additional_links":"","params":"","permission":"R","hide":"","children":[{"id":1,"text":"'.getMessage("FRIMKO_NESTABLEMENU_NEW_ELEMENT").'","link":"link","additional_links":"","params":"","permission":"","hide":""}]}]}]';
             SettingsMenuTable::add(array(
                 'NAME'=>$name,
-                'SITE'=>$site,
                 'DATA'=>$data,
             ));
         }
