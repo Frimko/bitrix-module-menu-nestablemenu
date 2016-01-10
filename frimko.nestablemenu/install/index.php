@@ -31,7 +31,7 @@ class frimko_nestablemenu extends CModule
     public $PATCH;
     public function __construct()
     {
-        require("/version.php");
+        require("version.php");
         $this->MODULE_ID = "frimko.nestablemenu";
         $this->MODULE_VERSION = $arModuleVersion['VERSION'];
         $this->MODULE_VERSION_DATE = $arModuleVersion['VERSION_DATE'];
@@ -80,7 +80,7 @@ class frimko_nestablemenu extends CModule
         {
             SettingsMenuTable::getEntity()->createDbTable();
             $name = 'new_menu';
-            $site = '1';
+            $site = SITE_ID;
             $data = '[{"id":1,"text":"'.getMessage("FRIMKO_NESTABLEMENU_NEW_ELEMENT").'","link":"link","additional_links":"","params":"","permission":"R","hide":"","children":[{"id":2,"text":"'.getMessage("FRIMKO_NESTABLEMENU_NEW_ELEMENT").'","link":"link","additional_links":"","params":"","permission":"R","hide":"","children":[{"id":1,"text":"'.getMessage("FRIMKO_NESTABLEMENU_NEW_ELEMENT").'","link":"link","additional_links":"","params":"","permission":"","hide":""}]}]}]';
             SettingsMenuTable::add(array(
                 'NAME'=>$name,
