@@ -1,3 +1,0 @@
-<?
-$MESS["FRIMKO_NESTABLEMENU_NOVYY_ELEMENT"] = "Новый элемент\",\"link\":\"link\",\"additional_links\":\"\",\"params\":\"\",\"permission\":\"R\",\"hide\":\"\",\"children\":[{\"id\":2,\"text\":\"Новый элемент\",\"link\":\"link\",\"additional_links\":\"\",\"params\":\"\",\"permission\":\"R\",\"hide\":\"\",\"children\":[{\"id\":1,\"text\":\"Новый элемент\",\"link\":\"link\",\"additional_links\":\"\",\"params\":\"\",\"permission\":\"\",\"hide\":\"\"}]}]}]";
-?>
