@@ -6,7 +6,7 @@
  * Time: 14:54
  */
 
-namespace Bitrix\Frimko\Nestablemenu;
+namespace Bitrix\Web38\Nestablemenu;
 
 use Bitrix\Main\Entity\DataManager;
 use Bitrix\Main\Entity\IntegerField;
@@ -23,7 +23,7 @@ class SettingsMenuTable extends DataManager
 
     public static function getTableName()
     {
-        return 'frimko_menu';
+        return 'nestable_menu';
     }
 
     public static function getMap()

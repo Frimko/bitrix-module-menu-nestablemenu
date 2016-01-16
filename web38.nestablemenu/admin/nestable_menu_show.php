@@ -2,13 +2,11 @@
 
 
 require_once($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_admin_before.php");
-require_once($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/frimko.nestablemenu/include.php");
-require_once($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/frimko.nestablemenu/prolog.php");
-use Bitrix\Frimko\Nestablemenu\SettingsMenuTable;
+require_once($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/web38.nestablemenu/include.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/web38.nestablemenu/prolog.php");
+use Bitrix\Web38\Nestablemenu\SettingsMenuTable;
 
 IncludeModuleLangFile(__FILE__);
-
-/*require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_admin_js.php");*/
 
 
 $POST_RIGHT = $APPLICATION->GetGroupRight("subscribe");
@@ -170,7 +168,7 @@ echo BeginNote();?>
 
 <?echo EndNote();
 /*грузим внутренности */
-require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/frimko.nestablemenu/admin/template.php");
+require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/web38.nestablemenu/admin/template.php");
 
 $tabControl->Buttons(
     array(

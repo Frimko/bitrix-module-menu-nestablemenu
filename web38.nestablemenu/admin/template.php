@@ -1,10 +1,10 @@
 <?
 /*все что нам надо для красоты*/
-$APPLICATION->AddHeadScript('/bitrix/js/frimko.nestablemenu/jquery-2.1.4.min.js');
-$APPLICATION->AddHeadScript('/bitrix/js/frimko.nestablemenu/jquery.nestable.js');
-$APPLICATION->SetAdditionalCSS("/bitrix/css/frimko.nestablemenu/style.css");
+$APPLICATION->AddHeadScript('/bitrix/js/web38.nestablemenu/jquery-2.1.4.min.js');
+$APPLICATION->AddHeadScript('/bitrix/js/web38.nestablemenu/jquery.nestable.js');
+$APPLICATION->SetAdditionalCSS("/bitrix/css/web38.nestablemenu/style.css");
 
-use Bitrix\Frimko\Nestablemenu\SettingsMenuTable;
+use Bitrix\Web38\Nestablemenu\SettingsMenuTable;
 
 
 $result = SettingsMenuTable::getList(array(

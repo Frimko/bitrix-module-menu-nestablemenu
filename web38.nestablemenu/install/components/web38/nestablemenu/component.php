@@ -2,7 +2,7 @@
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 
 global $CACHE_MANAGER;
-use Bitrix\Frimko\Nestablemenu\SettingsMenuTable;
+use Bitrix\Web38\Nestablemenu\SettingsMenuTable;
 
 if($USER->IsAuthorized()) {
     $buttonID = "nestablemenu";
@@ -32,11 +32,11 @@ if($USER->IsAuthorized()) {
 }
 
 $cache_id = md5(serialize($arParams));
-$cache_dir = "/".SITE_ID."/frimko/nestablemenu";
+$cache_dir = "/".SITE_ID."/web38/nestablemenu";
 $obCache = new CPHPCache;
 if ($obCache->InitCache($arParams['MENU_CACHE_TIME'], $cache_id, $cache_dir)) {
     $arResult = $obCache->GetVars();
-} elseif (CModule::IncludeModule('frimko.nestablemenu') && $obCache->StartDataCache()) {
+} elseif (CModule::IncludeModule('web38.nestablemenu') && $obCache->StartDataCache()) {
 
     $result = SettingsMenuTable::getList(array(
         'select'  => array('NAME','DATA')

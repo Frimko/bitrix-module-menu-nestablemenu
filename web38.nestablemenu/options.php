@@ -7,12 +7,11 @@
  * @copyright (c) 2015-2015 frimko
  */
 
-$module_id = 'frimko.nestablemenu';
-use Bitrix\Frimko\Nestablemenu\SettingsMenuTable;
+use Bitrix\Web38\Nestablemenu\SettingsMenuTable;
 
 IncludeModuleLangFile(__FILE__);
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/frimko.nestablemenu/include.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/'.$mid.'/include.php');
 
 if ($REQUEST_METHOD=="GET" && $USER->IsAdmin() && strlen($RestoreDefaults)>0 && check_bitrix_sessid()) {
     SettingsMenuTable::update('1', array(

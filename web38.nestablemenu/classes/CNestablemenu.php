@@ -1,6 +1,6 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
-use Bitrix\Frimko\Nestablemenu\SettingsMenuTable;
+use Bitrix\Web38\Nestablemenu\SettingsMenuTable;
 
 class CNestablemenu extends CBitrixComponent
 {
